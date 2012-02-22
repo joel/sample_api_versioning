@@ -1,5 +1,5 @@
 class CryptoController < ApplicationController
-  respond_to :html, :json
+  respond_to :html, :json, :api_v1
 
   # GET /encode
   #
@@ -16,10 +16,7 @@ class CryptoController < ApplicationController
     @crypto = Crypto.new
     @crypto.encode(params[:value])
 
-    respond_with do |format|
-      format.json { render :json => @crypto.to_json, :status => 200 }
-      format.html
-    end
+    respond_with(@crypto)
   end
 
   # GET /decode
@@ -37,10 +34,7 @@ class CryptoController < ApplicationController
     @crypto = Crypto.new
     @crypto.decode(params[:value])
 
-    respond_with do |format|
-      format.json { render :json => @crypto.to_json, :status => 200 }
-      format.html
-    end
+    respond_with(@crypto)
   end
 
 end
