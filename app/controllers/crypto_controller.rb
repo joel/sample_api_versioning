@@ -9,6 +9,8 @@ class CryptoController < ApplicationController
   # * +string+ - (String) - Chaine de caractére
   # ==== Example request
   # GET http://example.com/encode.json?value=foo
+  # curl -v -H 'Accept: application/json' "http://localhost.com:3000/crypto/encode?value=foo"
+  # curl -v -H 'Accept: application/sample.api.v1+json' "http://localhost.com:3000/crypto/encode?value=foo"
   # === Response
   #   { "origin": 'foo', 'encoding': 'oof' }
   #
@@ -27,6 +29,8 @@ class CryptoController < ApplicationController
   # * +string+ - (String) - Chaine de caractére
   # ==== Example request
   # GET http://example.com/decode.json?value=oof
+  # curl -v -H 'Accept: application/json' "http://localhost.com:3000/crypto/decode?value=oof"
+  # curl -v -H 'Accept: application/sample.api.v1+json' "http://localhost.com:3000/crypto/decode?value=oof"
   # === Response
   #   { "origin": 'oof', 'encoding': 'foo' }
   #
